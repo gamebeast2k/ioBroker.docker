@@ -1,0 +1,30 @@
+version: '2'
+
+networks:                             
+    bridge_nw:
+        driver: macvlan
+        driver_opts:
+# set your Networkcard
+            parent: ens18                       
+        ipam:
+            config:
+# your networksettings
+            - subnet: 192.168.0.0/16            
+                  gateway: 192.168.0.1
+                  ip_range: 192.168.0.0/24
+# create volumes
+volumes:                                        
+    iobroker-data:
+
+# create services
+services:                                       
+    iobroker:
+        restart: always 
+        image: gamebeast/iobroker
+        hostname: iobroker
+        container_name: iobroker
+        volumes:
+        - iobroker-data:/opt/iobroker
+        networks:
+            bridge_nw:
+                ipv4_address: 192.168.55.1

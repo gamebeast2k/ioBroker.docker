@@ -1,0 +1,18 @@
+version: '2'
+
+volumes:                                # create volumes
+    iobroker-data:
+
+services:                               # create services
+    iobroker:
+        restart: always 
+        image: gamebeast/iobroker
+        hostname: iobroker
+        container_name: iobroker
+        ports:
+        - "8081:8081"
+        - "8082:8082"
+        - "8083:8083"
+        - "8084:8084"
+        volumes:
+        - iobroker-data:/opt/iobroker
