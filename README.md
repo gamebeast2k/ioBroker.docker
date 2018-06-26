@@ -21,3 +21,5 @@ Automated builds are hosted on [Docker Hub][this.project_docker_hub_url].
 
 #### Image Size
     2018-06-26 = 391.7 MB
+[this.project_docker_hub_url]: https://hub.docker.com/r/gamebeast/iobroker/
+[this.project_github_url]: https://github.com/gamebeast2k/ioBroker.docker
