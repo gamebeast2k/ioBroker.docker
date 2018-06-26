@@ -27,4 +27,4 @@ services:
         - iobroker-data:/opt/iobroker
         networks:
             bridge_nw:
-                ipv4_address: 192.168.55.1
+                ipv4_address: 192.168.0.55
