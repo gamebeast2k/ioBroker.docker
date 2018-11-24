@@ -4,7 +4,10 @@ FROM mhart/alpine-node:8
 
 MAINTAINER Gamebeast <p.r@gamebeast.de>
 
-RUN apk add --no-cache bash python build-base
+RUN apk add --no-cache bash python build-base tzdata 
+
+ENV TZ Europe/Berlin
+RUN dpkg-reconfigure --frontend=noninteractive tzdata
 
 RUN mkdir -p /opt/iobroker/
 WORKDIR /opt/iobroker/
